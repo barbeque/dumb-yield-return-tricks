@@ -30,6 +30,12 @@ namespace FileHandles {
 			foreach(var line in items) {
 				Console.WriteLine(line);
 			}
+			// What happens if we cherry pick?
+			for(var i = 0; i < 5; ++i) {
+				var n = items.ElementAt(i);
+				Console.WriteLine(n);
+				// Does the file ever get closed?
+			}
 		}
 	}
 }

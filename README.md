@@ -13,3 +13,6 @@ filtering. This is probably what LINQ does internally.
 * *wtf.cs* - Demonstrates a common but annoying bug with manipulating IEnumerables
 returned from a yield return generator without first holding onto the entire collection
 in memory.
+* *filehandles.cs* - Demonstrates that the body around a yield return is re-called
+when trying to re-enumerate the state machine produced by the yield return. Also
+shows a potential trap with opening and closing a file around a yield return.
