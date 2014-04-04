@@ -18,7 +18,8 @@ namespace Wtf {
 		public static void ManipulateItems(IEnumerable<Nubbin> items) {
 			foreach(var f in items) {
 				// f exists only in this scope..
-				// ..and is destroyed right after.
+				// ..and is destroyed right after unless someone else
+				// is also holding onto a reference to f.
 				f.Age *= 2;
 			}
 		}
