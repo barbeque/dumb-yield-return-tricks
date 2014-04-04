@@ -33,6 +33,9 @@ namespace Wtf {
 			var itemsAsList = items.ToList();
 			Demo.ManipulateItems(itemsAsList);
 			Console.WriteLine("Altered List of ages: " + string.Join(", ", itemsAsList.Select(i => i.Age.ToString()).ToArray()));
+			// The moral? Don't rely on side effects!
+			// When dealing with these, err on the side of caution and work
+			// with a pure functional approach.
 		}
 	}  
 
