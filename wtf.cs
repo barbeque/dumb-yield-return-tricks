@@ -30,6 +30,9 @@ namespace Wtf {
 
 			// Still not the case when you run a select over the collection!
 			Console.WriteLine("Altered IEnumerable of ages: " + string.Join(", ", items.Select(i => i.Age.ToString()).ToArray()));
+			// Force the IEnumerable to materialize so we have
+			// at least one reference in memory to each node of the returned
+			// collection at all times.
 			var itemsAsList = items.ToList();
 			Demo.ManipulateItems(itemsAsList);
 			Console.WriteLine("Altered List of ages: " + string.Join(", ", itemsAsList.Select(i => i.Age.ToString()).ToArray()));
