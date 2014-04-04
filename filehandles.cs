@@ -22,14 +22,17 @@ namespace FileHandles {
 
 		public static void Main(String[] args) {
 			var items = Demo.YieldReturnItems();
+			
 			// Read once...
 			foreach(var line in items) {
 				Console.WriteLine(line);
 			}
+
 			// Then again...
 			foreach(var line in items) {
 				Console.WriteLine(line);
 			}
+
 			// What about if an exception happens halfway through?
 			Console.WriteLine("Starting exception demo.");
 			try {
@@ -45,6 +48,7 @@ namespace FileHandles {
 			finally {
 				Console.WriteLine("Completed exception demo.");
 			}
+
 			// What happens if we cherry pick?
 			for(var i = 0; i < 5; ++i) {
 				var n = items.ElementAt(i);
