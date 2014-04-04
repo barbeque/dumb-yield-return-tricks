@@ -35,6 +35,8 @@ namespace FileHandles {
 				var n = items.ElementAt(i);
 				Console.WriteLine(n);
 				// Does the file ever get closed?
+				// Could this cause a memory leak pulling from any
+				// large IDisposable?
 			}
 		}
 	}
