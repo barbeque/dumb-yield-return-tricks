@@ -30,6 +30,21 @@ namespace FileHandles {
 			foreach(var line in items) {
 				Console.WriteLine(line);
 			}
+			// What about if an exception happens halfway through?
+			Console.WriteLine("Starting exception demo.");
+			try {
+				foreach(var line in items) {
+					if(line.Contains("isn't")) {
+							throw new Exception("Bailing out!");
+					}
+				}
+			}
+			catch(Exception e) {
+				Console.WriteLine("Caught exception: " + e.Message);
+			}
+			finally {
+				Console.WriteLine("Completed exception demo.");
+			}
 			// What happens if we cherry pick?
 			for(var i = 0; i < 5; ++i) {
 				var n = items.ElementAt(i);
